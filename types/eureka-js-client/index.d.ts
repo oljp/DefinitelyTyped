@@ -19,6 +19,7 @@ export namespace EurekaClient {
     type DataCenterName = 'Netflix' | 'Amazon' | 'MyOwn';
 
     interface EurekaConfig {
+        requestMiddleware: (requestOpts: any, done: (opts: any) => void) => void;
         instance: EurekaInstanceConfig;
         eureka: EurekaClientConfig;
     }
